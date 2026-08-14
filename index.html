@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#030304">
+<title>For Nihaa — August 18</title>
+<style>
+:root{
+  --bg:#030304; --panel:#0d0d11; --white:#f8f8fb; --muted:#b8b8c1;
+  --pink:#ff6fae; --line:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+ background:
+ radial-gradient(circle at 50% 10%,rgba(255,111,174,.15),transparent 35%),
+ radial-gradient(circle at 20% 80%,rgba(255,255,255,.04),transparent 30%);
+}
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{50%{opacity:.15;transform:scale(.6)}}
+section{min-height:100vh;padding:90px 20px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.wrap{width:min(920px,100%);margin:auto}
+.center{text-align:center}
+.eyebrow{font-family:Arial,sans-serif;text-transform:uppercase;letter-spacing:.28em;color:var(--pink);font-size:.68rem}
+h1{font-size:clamp(4rem,18vw,9rem);line-height:.82;margin:24px 0}
+h2{font-size:clamp(2.5rem,8vw,5.3rem);line-height:.92;margin:18px 0}
+h3{font-size:2rem}
+p{font-size:1.08rem;line-height:1.85;color:#e5e5e8}
+.muted{color:var(--muted)}
+.pink{color:var(--pink);text-shadow:0 0 30px rgba(255,111,174,.35)}
+button,.button{
+ border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;
+ padding:14px 24px;border-radius:999px;font-family:Arial,sans-serif;font-size:.95rem;
+ cursor:pointer;transition:.3s;text-decoration:none;display:inline-block
+}
+button:hover,.button:hover{border-color:var(--pink);box-shadow:0 0 35px rgba(255,111,174,.18);transform:translateY(-2px)}
+#intro{position:fixed;inset:0;z-index:20;background:#020203;display:flex;align-items:center;justify-content:center;text-align:center;transition:opacity 1.4s,visibility 1.4s}
+#intro.hidden{opacity:0;visibility:hidden}
+.heart{border:0;background:none;font-size:5.5rem;padding:0;filter:drop-shadow(0 0 25px rgba(255,111,174,.55));animation:beat 1.5s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.13)}}
+.hint{font-family:Arial,sans-serif;color:#777;margin-top:12px;font-size:.8rem}
+.card{background:linear-gradient(145deg,rgba(18,18,23,.94),rgba(7,7,9,.94));border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:0 25px 100px rgba(0,0,0,.5)}
+.quote{border-left:2px solid var(--pink);padding-left:18px}
+.photo{width:100%;display:block;object-fit:cover;border-radius:26px;box-shadow:0 25px 90px rgba(0,0,0,.55)}
+.tall{max-height:780px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.memory{position:relative;margin:22px 0}
+.memory img{height:620px}
+.memory .caption{position:absolute;left:18px;right:18px;bottom:18px;padding:18px;border-radius:20px;background:linear-gradient(transparent,rgba(0,0,0,.86));padding-top:90px}
+.letter-wrap{max-width:760px;margin:auto}
+.letter{filter:grayscale(1);transform:rotate(-1deg);transition:transform .5s}
+.letter:hover{transform:rotate(0) scale(1.01)}
+.heart-row{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:35px 0}
+.love-item{width:180px;padding:22px 14px;border:1px solid var(--line);border-radius:24px;background:#ffffff05}
+.love-item .icon{font-size:2rem}
+#songCard{position:relative;overflow:hidden}
+#songCard:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-100px;top:-120px;background:rgba(255,111,174,.08)}
+.note{font-family:Arial,sans-serif;font-size:.8rem;color:#888}
+#final{background:radial-gradient(circle at 50% 50%,rgba(255,111,174,.12),transparent 45%)}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity 1s ease,transform 1s ease}
+.reveal.show{opacity:1;transform:none}
+.fade{animation:fade 1.8s both}@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:45px 0}
+.small{font-family:Arial,sans-serif;font-size:.82rem;color:#999}
+@media(max-width:700px){
+ .grid{grid-template-columns:1fr}.memory img{height:540px}
+ .card{padding:22px}section{padding:75px 16px}
+ p{font-size:1rem}.love-item{width:145px}
+}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+
+<div id="intro">
+  <div>
+    <div class="eyebrow">A little surprise</div>
+    <button class="heart" aria-label="Open the surprise" onclick="openSurprise()">♥</button>
+    <div class="hint">tap the heart</div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap center reveal">
+    <div class="eyebrow fade">Made especially for you</div>
+    <h1 class="fade">Hi, <span class="pink">Nihaa</span> ♥</h1>
+    <p class="fade">I wanted to keep a few of our moments in one little place.</p>
+    <button onclick="go('first')">Begin our story ↓</button>
+  </div>
+</section>
+
+<section id="first">
+  <div class="wrap reveal">
+    <div class="eyebrow">01 · The first look</div>
+    <h2>“I forgot who I was.”</h2>
+    <div class="card">
+      <p>I walked into a textile shop like it was just another ordinary day.</p>
+      <p>Then I saw you.</p>
+      <p class="quote">“When I looked at you, for a moment I forgot who I was.”</p>
+      <p>I didn't know that one ordinary moment would become the beginning of our story.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="eyebrow">02 · The rose</div>
+    <h2>🌹 A little rose. A big memory.</h2>
+    <div class="card center">
+      <p>You gave me a rose around July 10.</p>
+      <p>I may not remember the exact date, but I remember the feeling.</p>
+      <p class="quote">Some moments become unforgettable simply because they came from you.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="eyebrow">03 · That bus ride</div>
+    <h2>The moment I keep replaying.</h2>
+    <div class="grid">
+      <div class="memory"><img class="photo" src="photos/bus-color.jpg" alt="A memory from our bus ride"></div>
+      <div class="memory"><img class="photo" src="photos/bus-bw.jpg" alt="Our bus memory in black and white"></div>
+    </div>
+    <div class="card">
+      <p>We were sitting beside each other. You held my hand.</p>
+      <p>The wind hit your face and moved your hair...</p>
+      <p>Then you tucked it behind your ear.</p>
+      <p class="quote">I don't think you knew how beautiful that little moment looked to me.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="eyebrow">04 · Our memories</div>
+    <h2>A day with you.</h2>
+    <div class="memory">
+      <img class="photo" src="photos/together-color.jpg" alt="A memory together">
+      <div class="caption"><p style="margin:0">Somewhere between the ordinary moments, you became my favorite part.</p></div>
+    </div>
+    <div class="memory">
+      <img class="photo" src="photos/together-bw.jpg" alt="A memory together in black and white">
+      <div class="caption"><p style="margin:0">If I could keep one feeling from those days forever, it would be this.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="eyebrow">05 · August 2</div>
+    <h2>Your letter. 💌</h2>
+    <div class="card center">
+      <p>A day I'll never forget.</p>
+      <div class="letter-wrap">
+        <img class="photo letter" src="photos/letter.jpg" alt="The handwritten love letter from August 2">
+      </div>
+      <div class="divider"></div>
+      <p class="quote" style="text-align:left">You wrote this for me, and somehow a piece of that day stayed with me.</p>
+      <p class="muted">I will always remember August 2.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal center">
+    <div class="eyebrow">06 · Things I love about you</div>
+    <h2>The little things.</h2>
+    <div class="heart-row">
+      <div class="love-item"><div class="icon">☺</div><p>Your smile</p></div>
+      <div class="love-item"><div class="icon">♡</div><p>The way you talk</p></div>
+      <div class="love-item"><div class="icon">♪</div><p>Your voice</p></div>
+    </div>
+    <p class="quote" style="display:inline-block;text-align:left">And all the little things I can't quite put into words.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="eyebrow">07 · A song for you</div>
+    <h2>Perfect. 🎤</h2>
+    <div class="card center" id="songCard">
+      <p>I wanted to sing this for you, even if my voice isn't perfect.</p>
+      <p class="quote">Because it doesn't have to be perfect. It just has to be from me to you.</p>
+      <audio id="song" controls preload="metadata" style="width:100%;margin-top:15px">
+        <source src="audio/perfect.mp3" type="audio/mpeg">
+      </audio>
+      <p class="note">Your recording will play here after you add <b>audio/perfect.mp3</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal center">
+    <div class="eyebrow">08 · From Anandhu</div>
+    <h2>For you, Nihaa.</h2>
+    <div class="card">
+      <p>Two months may not sound like a very long time.</p>
+      <p>But in those two months, you've given me moments I don't want to forget.</p>
+      <p>Thank you for your smile, your voice, your hand in mine, your letter, and all the little moments that became memories.</p>
+      <p class="quote">I hope we keep making many more of them.</p>
+    </div>
+  </div>
+</section>
+
+<section id="final">
+  <div class="wrap center reveal">
+    <div class="eyebrow">August 18, 2026</div>
+    <h1><span class="pink">Happy Birthday</span><br>Nihaa ♥</h1>
+    <p>May this be only the beginning of our story.</p>
+    <p class="small">Made with love · Anandhu</p>
+    <br>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})">↻ Replay our story</button>
+  </div>
+</section>
+
+<script>
+function openSurprise(){
+  document.getElementById('intro').classList.add('hidden');
+  setTimeout(()=>document.querySelector('section').scrollIntoView({behavior:'smooth'}),650);
+}
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});}
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const stars=document.getElementById('stars');
+for(let i=0;i<90;i++){
+  const s=document.createElement('span'); s.className='star';
+  s.style.left=(Math.random()*100)+'%'; s.style.top=(Math.random()*100)+'%';
+  s.style.animationDelay=(Math.random()*3)+'s';
+  stars.appendChild(s);
+}
+</script>
+</body>
+</html>
